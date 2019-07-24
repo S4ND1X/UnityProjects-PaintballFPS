@@ -9,6 +9,8 @@ public class PlayerMove : MonoBehaviour
     [SerializeField] private string horizontalInputName;
     [SerializeField] private string verticalInputName;
     [SerializeField] private float movementSpeed;
+    [SerializeField] private float slopeForce;
+    [SerializeField] private float slopeForceLength;
     //Referencia en cache
     private CharacterController charController;
 
@@ -45,11 +47,36 @@ public class PlayerMove : MonoBehaviour
          * Y a su vez la restringe para que la velocidad combinada es decir la diagonal
          * no exceda el limite, para eso el ClampMagnitud, es como clamp para vectores
          */
-        charController.SimpleMove(Vector3.ClampMagnitude(forwardMovement + rightMovement, 1.0f) * movementSpeed);
+        charController.SimpleMove(  Vector3.ClampMagnitude
+                                    (forwardMovement + rightMovement, 1.0f) * movementSpeed);
+
+        //Si esta movimiendo y esta en una rampa
+        if ((vertInput != 0 || horiInput != 0) && OnSlope())
+            charController.Move(Vector3.down * charController.height / 2 * slopeForce * Time.deltaTime);
 
         JumpInput();
 
     }
+
+    //Funcion para saber si esta en una inclinacion
+    private bool OnSlope()
+    {
+        if (isJumping) return false;
+
+        //Guarda la informacion en donde fue golpeado
+        RaycastHit hit;
+
+        if(Physics.Raycast( transform.position,
+                            Vector3.down, out hit, charController.height / 2 * slopeForceLength))
+        {
+            if(hit.normal != Vector3.up)
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
 
     private void JumpInput()
     {

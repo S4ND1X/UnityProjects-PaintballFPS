@@ -581,6 +581,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Gun
       objectReference: {fileID: 0}
+    - target: {fileID: 8562372213325675058, guid: 4d2c90a7e9a27d944a439efaaac1d7a2,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.518
+      objectReference: {fileID: 0}
+    - target: {fileID: 8562372213325675058, guid: 4d2c90a7e9a27d944a439efaaac1d7a2,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.925
+      objectReference: {fileID: 0}
     - target: {fileID: 1421239302245083260, guid: 4d2c90a7e9a27d944a439efaaac1d7a2,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -635,16 +645,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0.078
-      objectReference: {fileID: 0}
-    - target: {fileID: 8562372213325675058, guid: 4d2c90a7e9a27d944a439efaaac1d7a2,
-        type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.518
-      objectReference: {fileID: 0}
-    - target: {fileID: 8562372213325675058, guid: 4d2c90a7e9a27d944a439efaaac1d7a2,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0.925
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4d2c90a7e9a27d944a439efaaac1d7a2, type: 3}
@@ -818,6 +818,16 @@ PrefabInstance:
         type: 3}
       propertyPath: movementSpeed
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 418522197594664955, guid: aa5b67c1f8009da41908471b3c8c939a,
+        type: 3}
+      propertyPath: slopeForce
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 418522197594664955, guid: aa5b67c1f8009da41908471b3c8c939a,
+        type: 3}
+      propertyPath: slopeForceLength
+      value: 1.5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aa5b67c1f8009da41908471b3c8c939a, type: 3}
